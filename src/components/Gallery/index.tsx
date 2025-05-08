@@ -1,6 +1,6 @@
 import Section from '../Section'
 
-import { Item, Items, Action } from './styles'
+import { Item, Items, Action, Modal, ModalContent } from './styles'
 
 import spiderman from '../../assets/images/banner-homem-aranha.png'
 import hogwarts from '../../assets/images/fundo_hogwarts.png'
@@ -65,15 +65,16 @@ const Gallery = ({ defaultCover, name }: Props) => {
           ))}
         </Items>
       </Section>
-      <div>
-        <div>
+      <Modal>
+        <ModalContent className="container">
           <header>
             <h4>{name}</h4>
             <img src={fechar} alt="Ícone de fechar" />
           </header>
           <img src={spiderman} />
-        </div>
-      </div>
+        </ModalContent>
+        <div className="overlay"></div>
+      </Modal>
     </>
   )
 }
