@@ -37,7 +37,7 @@ const Product = () => {
           jogo.
         </p>
       </Section>
-      <Gallery defaultCover={residentEvil} />
+      <Gallery name="Jogo teste" defaultCover={residentEvil} />
     </>
   )
 }
