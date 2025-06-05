@@ -24,11 +24,11 @@ export type Game = {
     current?: number
   }
   details: {
+    languages: any
     category: string
     system: string
     developer: string
     publisher: string
-    language: string[]
   }
   media: {
     thumbnail: string
