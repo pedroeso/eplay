@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Game } from '../pages/Home'
+import { get } from 'http'
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
@@ -8,10 +9,40 @@ const api = createApi({
   endpoints: (builder) => ({
     getFeaturedGame: builder.query<Game, void>({
       query: () => 'destaque'
+    }),
+    getOnSale: builder.query<Game[], void>({
+      query: () => 'promocoes'
+    }),
+    getSoon: builder.query<Game[], void>({
+      query: () => 'em-breve'
+    }),
+    getActionGames: builder.query<Game[], void>({
+      query: () => 'acao'
+    }),
+    getSportsGames: builder.query<Game[], void>({
+      query: () => 'esportes'
+    }),
+    getSimulationGames: builder.query<Game[], void>({
+      query: () => 'simulacao'
+    }),
+    getFightGames: builder.query<Game[], void>({
+      query: () => 'luta'
+    }),
+    getRpgGames: builder.query<Game[], void>({
+      query: () => 'rpg'
     })
   })
 })
 
-export const { useGetFeaturedGameQuery } = api
+export const {
+  useGetFeaturedGameQuery,
+  useGetSoonQuery,
+  useGetOnSaleQuery,
+  useGetActionGamesQuery,
+  useGetSportsGamesQuery,
+  useGetSimulationGamesQuery,
+  useGetFightGamesQuery,
+  useGetRpgGamesQuery
+} = api
 
 export default api
